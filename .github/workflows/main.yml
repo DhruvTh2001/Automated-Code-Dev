@@ -38,12 +38,8 @@ jobs:
           PYTHONPATH: ${{ github.workspace }}/src
         run: |
           echo "Running tests with PYTHONPATH set to $PYTHONPATH"
-          if [ -d tests ]; then
-            pytest tests/
-          else
-            echo "⚠️ No tests folder found. Skipping tests."
-          fi
-
+          pytest tests/
+      
       - name: Commit and push changes
         run: |
           git config --global user.name 'github-actions'

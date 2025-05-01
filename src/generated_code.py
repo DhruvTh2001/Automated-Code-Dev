@@ -17,3 +17,7 @@ code = template.replace("$function_name", function_name).replace("$message", mes
 with open(output_path, "w") as file:
     file.write("# Auto-generated code on " + str(datetime.now()) + "\n\n")
     file.write(code)
+
+# Define the auto_generated_function
+def auto_generated_function():
+    return "This function was generated automatically!"

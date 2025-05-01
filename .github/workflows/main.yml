@@ -25,6 +25,6 @@ jobs:
         run: python src/generated_code.py
 
       - name: Run Tests
-        run: |
-          export PYTHONPATH=$PYTHONPATH:$(pwd)/src
-          pytest tests/
+        env:
+          PYTHONPATH: ${{ github.workspace }}/src
+        run: pytest tests/

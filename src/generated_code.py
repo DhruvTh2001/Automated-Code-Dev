@@ -17,3 +17,6 @@ code = template.replace("$function_name", function_name).replace("$message", mes
 with open(output_path, "w") as file:
     file.write("# Auto-generated code on " + str(datetime.now()) + "\n\n")
     file.write(code)
+
+# After writing, let's import this dynamically so that the generated function can be called
+exec(open(output_path).read())

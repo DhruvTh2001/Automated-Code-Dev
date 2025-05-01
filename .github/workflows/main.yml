@@ -37,9 +37,8 @@ jobs:
         env:
           PYTHONPATH: ${{ github.workspace }}/src
         run: |
-          echo "Running tests with PYTHONPATH set to $PYTHONPATH"
           if [ -d tests ]; then
-            PYTHONPATH=$PYTHONPATH pytest tests/
+            pytest tests/
           else
             echo "⚠️ No tests folder found. Skipping tests."
           fi

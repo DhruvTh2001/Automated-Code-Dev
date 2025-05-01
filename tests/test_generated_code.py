@@ -13,5 +13,6 @@ def test_function_execution():
 
 def test_auto_generated_function_output(capfd):
     """Test if the auto-generated function prints the correct output"""
-    output = auto_generated_function()
-    assert output == "This function was generated automatically!"
+    auto_generated_function()
+    captured = capfd.readouterr()
+    assert captured.out.strip() == "This function was generated automatically!"

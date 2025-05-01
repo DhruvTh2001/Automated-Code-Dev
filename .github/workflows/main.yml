@@ -41,3 +41,4 @@ jobs:
             pytest tests/
           else
             echo "⚠️ No tests folder found. Skipping tests."
+          fi

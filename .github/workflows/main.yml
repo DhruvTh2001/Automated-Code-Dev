@@ -37,6 +37,7 @@ jobs:
         env:
           PYTHONPATH: ${{ github.workspace }}/src
         run: |
+          echo "Running tests with PYTHONPATH set to $PYTHONPATH"
           if [ -d tests ]; then
             pytest tests/
           else

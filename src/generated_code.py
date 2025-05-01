@@ -18,5 +18,5 @@ with open(output_path, "w") as file:
     file.write("# Auto-generated code on " + str(datetime.now()) + "\n\n")
     file.write(code)
 
-# After writing, let's import this dynamically so that the generated function can be called
+# Dynamically import and run the generated code
 exec(open(output_path).read())

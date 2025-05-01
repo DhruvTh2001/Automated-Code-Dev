@@ -1,18 +1,33 @@
-name: CI Workflow
+name: Auto Generate Code
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
-  build:
+  generate-code:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Run a simple command
-        run: echo "Hello, GitHub Actions!"
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Run Code Generator
+      run: |
+        python src/auto_generator.py
+
+    - name: Commit generated file
+      run: |
+        git config user.name "github-actions"
+        git config user.email "github-actions@github.com"
+        git add src/generated_code.py
+        git commit -m "Auto-generated code using GitHub Actions"
+        git push
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

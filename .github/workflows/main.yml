@@ -39,7 +39,7 @@ jobs:
         run: |
           echo "Running tests with PYTHONPATH set to $PYTHONPATH"
           if [ -d tests ]; then
-            pytest tests/
+            PYTHONPATH=$PYTHONPATH pytest tests/
           else
             echo "⚠️ No tests folder found. Skipping tests."
           fi

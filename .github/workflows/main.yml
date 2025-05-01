@@ -29,6 +29,10 @@ jobs:
           else
             echo "❌ src/generated_code.py not found" && exit 1
           fi
+          
+          - name: Add src to PYTHONPATH
+  run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
+
 
       - name: Run Tests
         env:

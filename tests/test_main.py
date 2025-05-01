@@ -1,10 +1,5 @@
-import sys
-import os
+from generated_code import auto_generated_function
 
-# Add the src directory to the system path
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
-
-from generated_code import hello  # adjust this if your function is named differently
-
-def test_hello():
-    assert hello() == "Hello World"  # replace with actual expected output if different
+def test_auto_generated_function_output(capfd):
+    output = auto_generated_function()
+    assert output == "This function was generated automatically!"

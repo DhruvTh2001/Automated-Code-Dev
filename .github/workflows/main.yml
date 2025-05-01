@@ -42,3 +42,14 @@ jobs:
           else
             echo "⚠️ No tests folder found. Skipping tests."
           fi
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add src/generated_code.py
+          if git diff --cached --quiet; then
+            echo "✅ No changes to commit"
+          else
+            git commit -m "🤖 Auto-update generated_code.py"
+            git push

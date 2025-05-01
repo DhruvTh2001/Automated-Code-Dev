@@ -1,2 +1,2 @@
 def $function_name():
-    print("$message")
+    return "$message"

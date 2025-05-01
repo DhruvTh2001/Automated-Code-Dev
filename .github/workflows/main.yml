@@ -24,9 +24,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run Code Generator
+     - name: Run Code Generator
       run: python src/generated_code.py
 
     - name: Run Tests
-      run: pytest tests/
+      run: |
+        export PYTHONPATH=$PYTHONPATH:$(pwd)/src
+        pytest tests/
+
 

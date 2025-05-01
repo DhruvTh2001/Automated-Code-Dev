@@ -1,0 +1,4 @@
+# Auto-generated code
+
+def $function_name():
+    print("$message")

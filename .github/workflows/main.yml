@@ -29,10 +29,9 @@ jobs:
           else
             echo "❌ src/generated_code.py not found" && exit 1
           fi
-          
-          - name: Add src to PYTHONPATH
-  run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
 
+      - name: Add src to PYTHONPATH
+        run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
 
       - name: Run Tests
         env:
@@ -42,4 +41,3 @@ jobs:
             pytest tests/
           else
             echo "⚠️ No tests folder found. Skipping tests."
-          fi

@@ -1,6 +1,10 @@
-def auto_generated_function():
-    print("This function was generated automatically!")
-    return "This function was generated automatically!"
-    with open("auto_output.py", "w") as f:
-    f.write("def greet():\n    return 'Hello, I am generated!'\n")
+# src/generated_code.py
+
+with open("src/auto_output.py", "w") as f:
+    f.write("def greet():\n")
+    f.write("    return 'Hello, I am generated!'\n")
+
+print("✅ auto_output.py generated successfully.")
+
+    
 

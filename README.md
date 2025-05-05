@@ -12,7 +12,7 @@ This project demonstrates automatic Python code generation and versioning using 
 - `.github/workflows/main.yml` – Workflow file for GitHub Actions
 - `src/auto_generator.py` – Script that generates code
 - `src/generated_code.py` – Output file (auto-generated)
-- `requirements.txt` – Python dependencies (currently empty)
+- `requirements.txt` – Python dependencies (pytest)
 - `README.md` – Project documentation
 
 ## 🚀 Future Ideas
